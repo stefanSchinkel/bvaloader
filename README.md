@@ -43,7 +43,7 @@ triggers = bva_readmarker('markerFile');
 %setup stimlus and response codes
 stimCode1 = 1;
 stimCode2 = 2;
-respCode = 100;
+responseCode = 100;
 
 % and the interval of the segments (trials)
 pre = 300;  % 300ms pre-stimulus interval
@@ -51,13 +51,13 @@ post = 1000 % 1000ms post-stimulus interval
 
 % epoch continuous data for both stimulus codes,
 % and also get the reaction times
-[condition1 rt1] = bva_epoch(eeg,trigger,stimCode1,pre,post,fs,respCode);
-[condition2 rt2] = bva_epoch(eeg,trigger,stimCode2,pre,post,fs,respCode);
+[condition1 rt1] = bva_epoch(eeg,trigger,stimCode1,pre,post,fs,responseCode);
+[condition2 rt2] = bva_epoch(eeg,trigger,stimCode2,pre,post,fs,responseCode);
 
 % epoch continuous data for both stimulus codes and get reaction times
 % but this time locked to the response, not the stimulus
-[condition1respLocked rt1] = bva_epoch2(eeg,trigger,stimCode1,pre,post,fs,respCode);
-[condition2respLocked rt2] = bva_epoch2(eeg,trigger,stimCode2,pre,post,fs,respCode);
+[condition1responseLocked rt1] = bva_epoch2(eeg,trigger,stimCode1,pre,post,fs,responseCode);
+[condition2responseLocked rt2] = bva_epoch2(eeg,trigger,stimCode2,pre,post,fs,responseCode);
 
 % or use the GUI
 ```
@@ -68,6 +68,7 @@ post = 1000 % 1000ms post-stimulus interval
 Note: When using this GUI you need to save the continuous EEG data as a Matlab (.mat) file. If you find that too annoying, drop me a line and I can fix that.
 
 ```matlab
+% load data reference a vhdr file and save data in MATLAB format
 eeg = bva_loadeeg(headerFile);
 save eeg.mat eeg;
 ```
