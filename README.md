@@ -1,12 +1,12 @@
-##BVALOADER
+## BVALOADER
 load and epoch Brain Vision data - without EEGlab
 
 
-###About:
+### About:
 
 I worked a lot with EEG data and do almost everything in Matlab - but I don't use EEGlab. In order to still have a rather convenient access to BrainVision data I wrote some functions to import such data. Note: If you intend to use EEGlab for your analysis anyways, you will be better of using the [bva-io plugin by Andreas Widmann](http://www.uni-leipzig.de/~biocog/content/widmann/eeglab-plugins/)
 
-###Contents:
+### Contents:
 
   * bva_readheader.m - read BrainVision Header (.vhdr) files
   * bva_readmarker.m - read BrainVision Marker (.vmrk) files
@@ -16,11 +16,11 @@ I worked a lot with EEG data and do almost everything in Matlab - but I don't us
   * bva_epoch2.m - epochise continous EEG data (response-locked)
   * bva_loadsubject.m - wrapper function
 
-###Requirements:
+### Requirements:
 
 MATLAB (I use/used 2007, 2010a and 2010b but  any recent version should work)
 
-###Example:
+### Example:
 
 Here is a short example how to use the functions. Imagine we have an EEG recording featuring 2 distinct conditions (stimuli classes), for simplicity 1 and 2. Also subjects had to give a response after the stimulus. The correct response is encoded with 100.
 Here's how to load such kind of data:
